@@ -2,6 +2,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django_ckeditor_5.fields import CKEditor5Field
 from django.contrib.auth.models import User
+from django.templatetags.static import static
 # from django.urls import reverse
 
 # Create your models here.
@@ -17,6 +18,15 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.name
+
+
+    @property
+    def icon(self):
+        if self.image:
+            icon = self.image.url
+        else:
+            icon = static('icons/python.png')
+        return icon
     
 class UserProfile(models.Model):
     class Meta:
