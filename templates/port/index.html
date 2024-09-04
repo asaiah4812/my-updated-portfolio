@@ -21,7 +21,7 @@
                 </a>
             </div>
         </div>
-        <div class="md:w-[500px] rounded-lg w-[300px] sm:w-[400px] overflow-hidden sm:flex sm:justify-center items-center mx-auto" data-tilt data-tilt-glare>
+        <div class="md:w-[500px] rounded-lg w-[300px] sm:w-[400px] hover:shadow-blue-400/50 overflow-hidden sm:flex sm:justify-center items-center mx-auto" data-tilt data-tilt-glare>
             <img src="{{me.userprofile.avatar.url}}" class="w-full" alt=""/>
         </div>
 
@@ -36,41 +36,15 @@
                 <span class="text-left">{{t.name}}</span>
             </div>
            {% endfor %}
-            <div class="flex gap-3">
-                <small class="text-lg font-bold">&#9897;</small>
-                <span class="text-left">Figma</span>
-            </div>    
-            <div class="flex gap-3">
-                <small class="text-lg font-bold">&#9897;</small>
-                <span class="text-left">HTML/CSS</span>
-            </div>  
-            <div class="flex gap-3">
-                <small class="text-lg font-bold">&#9897;</small>
-                <span class="text-left">Javascript</span>
-            </div>  
         </div>
-        <div class="space-y-6 w-full md:w-[500px] ">
+        <div class="space-y-7 w-full md:w-[500px] ">
              <h2 class="text-lg font-semibold">Skill progress</h2>
-             {% for sk in skills %}
-              
-            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: {{sk.score}}%">  {{sk.score}}%</div>
-            </div>
-              {% endfor %}
-            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 93%">  93%</div>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 95%">  95%</div>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
-                <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 63%">  63%</div>
-            </div>
+                {% include 'includes/skills.html' %}
         </div>
 
     </div>
     <!-- certificate -->
-    <div class="mt-5 mx-auto w-[90%] md:w-full ">
+    <div class="my-5 mx-auto w-[90%] md:w-full ">
         <h1 class="text-2xl md:text-4xl font-semibold dark:text-white">Testimonials</h1>
         <div class="cardy">
     <div class="wrapper py-5">
@@ -96,7 +70,7 @@
     </div>
 
     </div>
-    <div>
+    <div class="mt-5">
         <h1 class="text-2xl md:text-4xl font-semibold dark:text-white">Blogs Listings</h1>
         <div class="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 mx-auto w-[90%] md:w-full gap-6 py-[4rem]">
         
@@ -123,7 +97,8 @@
     {% endfor %}
     <!-- Blog Post 2 -->
     
-    </div>
+</div>
+{% include 'includes/pagination.html' %}
     </div>
 
     <div class="w-full md:w-[80%] lg:w-[75%] mx-auto md:mx-0 space-y-4">
@@ -141,7 +116,7 @@
     <div class="w-full md:w-[80%] lg:w-[75%] mx-auto md:mx-0 space-y-6 py-6">
         
         <h1 class="py-4 text-2xl md:text-4xl font-semibold dark:text-white"> More About me </h1>
-<div class="md:flex w-full" x-data="{ tab: 'tab1'}">
+<div class="md:flex w-full mt-5" x-data="{ tab: 'tab1'}">
     <ul class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
         <li @click.prevent="tab = 'tab1' ">
             <a href="#" class="inline-flex items-center px-4 py-3 rounded-lg active w-full dark:bg-blue-600" :class="{'bg-blue-700 text-white' : tab === 'tab1'}" aria-current="page">
